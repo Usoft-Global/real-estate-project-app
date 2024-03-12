@@ -1,12 +1,10 @@
-
+import Navbar from "./component/Navbar"
 
 function App() {
 
   return (
     <>
-     <div>
-      <p>hello</p>
-     </div>
+      <Navbar></Navbar>
     </>
   )
 }
