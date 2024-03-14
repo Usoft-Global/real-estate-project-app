@@ -8,10 +8,9 @@ class CustomizableBoardingView extends StatelessWidget {
       required this.usedLottieURL,
       required this.backgroundColor});
   final String shownString;
-  //= "Birinci sayfa burası";
   final String usedLottieURL;
-  //=    "https://lottie.host/b9d4ca4b-88c0-41f5-a177-31bdc7fdc343/3E8d95QVny.json";
   final Color backgroundColor;
+  final textColor = Colors.white;
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +21,17 @@ class CustomizableBoardingView extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
+            Text(
+              shownString,
+              style: Theme.of(context)
+                  .textTheme
+                  .titleLarge!
+                  .copyWith(color: textColor),
+              textAlign: TextAlign.center,
+            ),
             Lottie.network(
               usedLottieURL,
             ),
-            Text(shownString),
           ],
         ),
       ),

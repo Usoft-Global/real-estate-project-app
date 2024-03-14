@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:real_estate_project_app/screens/home_screen.dart';
+import 'package:real_estate_project_app/screens/sign_up_screen.dart';
 import 'package:real_estate_project_app/widgets/on_boarding_widgets/customizable_boarding_view.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -27,7 +27,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             //Sayfa değişimi
             onPageChanged: (value) {
               setState(() {
-                nextButtonString = value == 2 ? "Done" : "Next";
+                nextButtonString = (value == 2) ? "Done" : "Next";
               });
               // value == 2
               //     ? setState(() {
@@ -40,27 +40,27 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             children: const [
               //Ekranlarda geçiş yapılacak görüntüler
               CustomizableBoardingView(
-                  shownString: "Birinci Sayfa",
+                  shownString: "Hayalinizdeki evi bulmak artık daha kolay!",
                   usedLottieURL:
                       "https://lottie.host/b9d4ca4b-88c0-41f5-a177-31bdc7fdc343/3E8d95QVny.json",
                   backgroundColor: Colors.amber),
               CustomizableBoardingView(
-                  shownString: "İkinci sayfa",
+                  shownString:
+                      "Evinizi bulmak için uğraşmayın, sizin yerinize biz hallediyoruz!",
                   usedLottieURL:
                       "https://lottie.host/1e3d9ab1-91ea-46ed-a64e-963d73efcba1/7APmIwOplG.json",
                   backgroundColor: Colors.red),
               CustomizableBoardingView(
-                  shownString: "Üçüncü Sayfa",
+                  shownString:
+                      "Emlak dünyasına adım atın, fırsatları keşfedin!",
                   usedLottieURL:
                       "https://lottie.host/78932b2c-aff8-4b45-ae0d-c3e0d0f36254/svBj53qRXu.json",
                   backgroundColor: Colors.blue),
             ],
           ),
           //Indicator ve tuş kısımları
-
           Container(
             //Butonların Stack üstündeki konumu
-
             alignment: const Alignment(0, 0.8),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -91,7 +91,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         curve: _curvesOfViews);
                     if (_controller.page == 2) {
                       Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const HomeScreen(),
+                        builder: (context) => const SignUpScreen(),
                       ));
                     }
                   },
